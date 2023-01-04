@@ -1,24 +1,39 @@
 # README
+## about project
+bahasa pemrograman ```ruby 3.0.5```
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+framework ```rails 7.0.4```
 
-Things you may want to cover:
+database ```mysql```
 
-* Ruby version
+## setup project
+clone this project in
+```
+blablabla
+```
 
-* System dependencies
+run this command to install depedencies
+```
+bundle install
+```
 
-* Configuration
+migrate database
+```
+rake db:create
+rake db:migrate
+rake db:seed
+```
 
-* Database creation
+setup .env with rename or duplicate .env.example to .env and change gmail user account
+```
+SMTP_USERNAME=<change to your email>
+SMTP_PASSWORD=<password from your email>
+```
 
-* Database initialization
+all clear run with
+```rails s```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+to akses api documentation below:
+```
+https://documenter.getpostman.com/view/21454247/2s8Z72UBQK
+```
