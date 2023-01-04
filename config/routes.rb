@@ -3,4 +3,12 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  post '/regis', to: "session/registers#create"
+  post '/login', to: "session/logins#create"
+
+  get '/user', to: "users#show"
+  get '/confirm/:pin', to: "confirm_emails#create", :as => "confirm_email"
+
+  post '/email/change', to: "change_emails#create", :as => "change_email"
 end
