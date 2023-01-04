@@ -21,4 +21,12 @@ module ParamHelper
     def change_email_param
         params.permit(:email)
     end
+
+    def balance_param(user)
+        data = [
+            :user_id => user,
+            :currencies_id => params[:currency],
+            :amount => 0
+        ]
+    end
 end

@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::API
     private
-    def find_email_user
+    def check_email_user
         user = User.find_by(email: params[:email])
         
         user.nil? ? "" : render_duplicate(params[:email])

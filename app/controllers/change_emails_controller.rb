@@ -5,7 +5,7 @@ class ChangeEmailsController < ApplicationController
 
     before_action :authorized
     before_action :send_message_old_email, only: [:create]
-    before_action :find_email_user, only: [:create]
+    before_action :check_email_user, only: [:create]
     after_action :insert_to_mailer, only: [:create]
 
     def create
