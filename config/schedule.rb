@@ -5,11 +5,11 @@
 
 # Example:
 #
-set :output, "./log/cron_log.log"
+# set :output, "./log/cron_log.log"
 
-every 1.minute do
-  command "echo 'testing cron'"
-end
+# every 1.minute do
+#   command "echo 'testing cron'"
+# end
 
 #
 # every 4.days do
