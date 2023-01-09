@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     include ResponHelper
     include JwtHelper
 
-    before_action :authorized
+    before_action :authorized, except: [:all_user]  
 
     def show
         user = merge_data_user(get_user_detail, get_balance, pin(get_user_detail[:email]))
@@ -14,6 +14,11 @@ class UsersController < ApplicationController
         return render_fail_404
     end
 
+    def all_user
+        @q = User.ransack(params[:q])
+        user = @q.result(distinct: true)
+        return render_response(user)
+    end
     private
     def get_user_detail
         user = User.find_by_id(user_id)
